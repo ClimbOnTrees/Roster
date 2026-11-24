@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Customer Roster - Tree Service</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+</head>
+<body>
+  <header>
+    <h1>🌳 Customer Roster</h1>
+    <p class="subtitle">Travis Rasset Tree Service</p>
+  </header>
+
+  <main>
+    <section id="add-section" class="card">
+      <h2>Add Customer</h2>
+      <form id="customer-form">
+        <div class="form-row">
+          <label>Name *</label>
+          <input type="text" id="name" required placeholder="Customer full name">
+        </div>
+        <div class="form-row">
+          <label>Phone *</label>
+          <input type="tel" id="phone" required placeholder="(555) 123-4567">
+        </div>
+        <div class="form-row">
+          <label>Address</label>
+          <textarea id="address" rows="2" placeholder="Street, City, State ZIP"></textarea>
+        </div>
+        <div class="form-row">
+          <label>Reference (if any)</label>
+          <input type="text" id="reference" placeholder="How they found you / referral name">
+        </div>
+        <div class="form-row">
+          <label>Importance (1 = highest)</label>
+          <input type="number" id="importance" min="1" max="99" value="5" placeholder="1-99">
+        </div>
+        <div class="form-row">
+          <label>Photo 1 (estimate)</label>
+          <input type="file" id="photo1" accept="image/*" capture="environment">
+          <div id="preview1" class="preview"></div>
+        </div>
+        <div class="form-row">
+          <label>Photo 2 (estimate)</label>
+          <input type="file" id="photo2" accept="image/*" capture="environment">
+          <div id="preview2" class="preview"></div>
+        </div>
+        <button type="submit" class="btn primary">Save Customer</button>
+      </form>
+    </section>
+
+    <section id="roster-section">
+      <div class="section-header">
+        <h2>Roster (by importance)</h2>
+        <button id="export-btn" class="btn secondary">Export JSON</button>
+      </div>
+      <div id="roster-list"></div>
+    </section>
+  </main>
+
+  <!-- Waiver Modal -->
+  <div id="waiver-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="waiver-content"></div>
+      <button id="print-waiver" class="btn primary">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

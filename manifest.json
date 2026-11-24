@@ -1,0 +1,16 @@
+{
+  "name": "Customer Roster - Tree Service",
+  "short_name": "Roster",
+  "description": "Customer roster and liability waiver for tree pruning and removal",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2e7d32",
+  "theme_color": "#2e7d32",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
